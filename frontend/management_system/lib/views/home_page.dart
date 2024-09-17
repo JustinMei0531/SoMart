@@ -1,10 +1,28 @@
 import "package:flutter/material.dart";
 import "package:get/get.dart";
+import "package:management_system/controllers/sidebar_controller.dart";
+import "package:management_system/services/user_service.dart";
+import "package:management_system/controllers/home_controller.dart";
+import "package:management_system/views/account_settings_page.dart";
+import "package:management_system/views/add_product_page.dart";
+import "package:management_system/views/brands_page.dart";
+import "package:management_system/views/dashboard_page.dart";
+import "package:management_system/views/orders_page.dart";
+import "package:management_system/views/products_page.dart";
+import "package:management_system/views/reviews_page.dart";
+import "package:management_system/views/transactions_page.dart";
+import "package:management_system/widgets/sidebar.dart";
 
 class HomePage extends StatelessWidget {
   final RxBool isSidebarOpened = false.obs; // State to track sidebar visibility
 
+  // User service
+  final UserService service = Get.find<UserService>();
   HomePage({super.key});
+
+  // Page controllers
+  final HomeController homeController = Get.put(HomeController());
+  final SidebarController sidebarController = Get.put(SidebarController());
 
   void onMenuButtonClicked() {
     isSidebarOpened.value =
@@ -29,30 +47,48 @@ class HomePage extends StatelessWidget {
                           flex:
                               2, // The flex value you want for the green container
                           child: Container(
+                              decoration: BoxDecoration(
+                                  border: Border.all(
+                                      width: 1.0,
+                                      color: const Color.fromRGBO(
+                                          248, 249, 250, 1.0))),
                               height: 72.0,
                               child: Padding(
-                                padding: const EdgeInsets.all(5.0),
+                                padding: const EdgeInsets.all(10.0),
                                 child: Row(
                                   children: <Widget>[
                                     CircleAvatar(
                                       radius: 24.0,
                                     ),
-                                    SizedBox(
+                                    const SizedBox(
                                       width: 10.0,
                                     ),
-                                    Column(
-                                      mainAxisAlignment:
-                                          MainAxisAlignment.center,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.start,
-                                      children: [
-                                        Text(
-                                          "Username",
-                                          style: TextStyle(color: Colors.grey),
+                                    Wrap(
+                                      children: <Widget>[
+                                        Column(
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
+                                          crossAxisAlignment:
+                                              CrossAxisAlignment.start,
+                                          children: [
+                                            Text(
+                                              service.userInfo
+                                                      .value?["first_name"] +
+                                                  " " +
+                                                  service.userInfo
+                                                      .value?["last_name"],
+                                              style: const TextStyle(
+                                                  color: Colors.black87,
+                                                  fontSize: 12.0),
+                                            ),
+                                            Text(
+                                                service
+                                                    .userInfo.value?["email"],
+                                                style: const TextStyle(
+                                                    color: Colors.black87,
+                                                    fontSize: 12.0))
+                                          ],
                                         ),
-                                        Text("Email",
-                                            style:
-                                                TextStyle(color: Colors.grey))
                                       ],
                                     ),
                                   ],
@@ -92,16 +128,17 @@ class HomePage extends StatelessWidget {
                             ),
                           ),
                           IconButton(
-                              onPressed: () {},
+                              onPressed:
+                                  homeController.onFullScreenButtonClicked,
                               icon: const Icon(
                                 Icons.smart_screen,
                                 size: 24,
                                 color: Colors.grey,
                               )),
                           IconButton(
-                            onPressed: () {},
+                            onPressed: homeController.onLogoutButtonClicked,
                             icon: const Icon(
-                              Icons.notifications,
+                              Icons.exit_to_app,
                               size: 24,
                               color: Colors.grey,
                             ),
@@ -124,23 +161,29 @@ class HomePage extends StatelessWidget {
                     // Sidebar: This will take flex 1 or disappear when not opened
                     if (isSidebarOpened.value)
                       Expanded(
-                        flex: 1, // Sidebar takes 1/5 of the space
-                        child: Container(
-                          color: Colors.green,
-                          child: const Center(
-                            child: Text(
-                              "Sidebar Content",
-                              style: TextStyle(color: Colors.white),
-                            ),
-                          ),
-                        ),
-                      ),
+                          flex: 1, // Sidebar takes 1/5 of the space
+                          child: Sidebar()),
                     // Main Content: Flex 4, takes up more space
                     Expanded(
                       flex: 4,
-                      child: Center(
-                        child: Text("Main Content"),
-                      ),
+                      child: Obx(() => Container(
+                            decoration: const BoxDecoration(
+                              color: Color.fromRGBO(248, 249, 250, 1.0),
+                            ),
+                            child: IndexedStack(
+                              index: sidebarController.selectedIndex.value,
+                              children: <Widget>[
+                                DashboardPage(),
+                                ProductsPage(),
+                                OrdersPage(),
+                                BrandsPage(),
+                                AddProductPage(),
+                                TransactionsPage(),
+                                ReviewsPage(),
+                                AccountSettingsPage(),
+                              ],
+                            ),
+                          )),
                     ),
                   ],
                 )),

@@ -1,7 +1,7 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from flask_cors import CORS
-from flask_jwt_extended import JWTManager, create_access_token, jwt_required, get_jwt_identity
+from flask_jwt_extended import JWTManager
 from config import settings
 
 # Import all blueprints
@@ -31,7 +31,6 @@ def create_flask_app(config):
     with app.app_context():
         user_db.create_all()
 
-    
     return app
 
 

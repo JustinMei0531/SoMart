@@ -1,7 +1,10 @@
 import "package:flutter/material.dart";
+import "package:management_system/views/dashboard_page.dart";
 import "package:management_system/views/home_page.dart";
 import "package:get/get.dart";
+import "package:get_storage/get_storage.dart";
 import "package:management_system/views/login_page.dart";
+import "package:management_system/services/user_service.dart";
 
 class App extends StatelessWidget {
   App({super.key});
@@ -11,7 +14,6 @@ class App extends StatelessWidget {
     return GetMaterialApp(
       title: "SoMart Backend Management System",
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(brightness: Brightness.light),
       initialRoute: "/login",
       getPages: <GetPage<dynamic>>[
         GetPage(name: "/home", page: () => HomePage()),
@@ -21,4 +23,12 @@ class App extends StatelessWidget {
   }
 }
 
-void main() => runApp(App());
+void main() async {
+  WidgetsFlutterBinding.ensureInitialized();
+
+  await GetStorage.init();
+
+  Get.put(UserService());
+
+  runApp(App());
+}
