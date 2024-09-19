@@ -1,5 +1,4 @@
 import "package:flutter/material.dart";
-import "package:management_system/views/dashboard_page.dart";
 import "package:management_system/views/home_page.dart";
 import "package:get/get.dart";
 import "package:get_storage/get_storage.dart";

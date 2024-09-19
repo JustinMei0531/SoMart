@@ -22,4 +22,25 @@ class HttpService {
       throw Exception("Failed to send POST request to server: $e");
     }
   }
+
+  // Put request
+  Future<http.Response> putRequest(
+      {required String URL,
+      required Map<String, dynamic> body,
+      required String token}) async {
+    try {
+      http.Response response = await http.put(Uri.parse(URL),
+          headers: {
+            "Content-type": "application/json",
+            "Access-Control-Allow-Origin": "*",
+            "Accept": "*/*",
+            "Access-Origin-Allow-Methods": "GET, DELETE, HEAD, OPTIONS, POST",
+            "Authorization": "Bearer $token",
+          },
+          body: jsonEncode(body));
+      return response;
+    } catch (e) {
+      throw Exception("Failed to send PUT request to server: $e");
+    }
+  }
 }

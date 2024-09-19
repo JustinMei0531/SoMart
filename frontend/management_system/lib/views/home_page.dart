@@ -1,3 +1,4 @@
+import "dart:typed_data";
 import "package:flutter/material.dart";
 import "package:get/get.dart";
 import "package:management_system/controllers/sidebar_controller.dart";
@@ -12,6 +13,7 @@ import "package:management_system/views/products_page.dart";
 import "package:management_system/views/reviews_page.dart";
 import "package:management_system/views/transactions_page.dart";
 import "package:management_system/widgets/sidebar.dart";
+import "package:management_system/utils/image_utils.dart";
 
 class HomePage extends StatelessWidget {
   final RxBool isSidebarOpened = false.obs; // State to track sidebar visibility
@@ -31,6 +33,9 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    //  Decode base64 image data
+    Uint8List imageData = ImageUtils.decodeImage(
+        ImageUtils.extractBase64FromDataUrl(service.userInfo.value!["avatar"]));
     return Scaffold(
       body: Column(
         children: [
@@ -59,6 +64,7 @@ class HomePage extends StatelessWidget {
                                   children: <Widget>[
                                     CircleAvatar(
                                       radius: 24.0,
+                                      backgroundImage: MemoryImage(imageData),
                                     ),
                                     const SizedBox(
                                       width: 10.0,

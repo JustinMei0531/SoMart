@@ -96,19 +96,27 @@ your password, please contact the administrator to reset it.'''),
 
         if (data["user"]["role"] != 1) {
           Get.snackbar("Error", "Please log in using an administrator account!",
-              icon: const Icon(Icons.warning), maxWidth: 400.0);
+              icon: const Icon(Icons.warning),
+              maxWidth: 400.0,
+              duration: const Duration(seconds: 2));
           return;
         }
         Get.snackbar("Success", "Login successful",
-            icon: const Icon(Icons.verified_outlined), maxWidth: 350.0);
+            icon: const Icon(Icons.verified_outlined),
+            maxWidth: 350.0,
+            duration: const Duration(seconds: 2));
         Get.offNamed("/home");
       } else {
         Get.snackbar("Error", "Login Failed",
-            icon: const Icon(Icons.error), maxWidth: 350.0);
+            icon: const Icon(Icons.error),
+            maxWidth: 350.0,
+            duration: const Duration(seconds: 2));
       }
     } catch (e) {
       Get.snackbar("Error occurred", "$e",
-          icon: const Icon(Icons.error), maxWidth: 350.0);
+          icon: const Icon(Icons.error),
+          maxWidth: 350.0,
+          duration: const Duration(seconds: 2));
     } finally {
       isLoading.value = false;
     }

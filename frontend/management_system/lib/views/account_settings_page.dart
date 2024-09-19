@@ -1,11 +1,24 @@
+import "dart:typed_data";
+
 import "package:flutter/material.dart";
 import "package:get/get.dart";
+import "package:management_system/controllers/account_controller.dart";
+import "package:management_system/services/user_service.dart";
+import "package:management_system/utils/image_utils.dart";
 
 class AccountSettingsPage extends StatelessWidget {
   AccountSettingsPage({super.key});
 
+  // User service
+  final UserService service = Get.find<UserService>();
+  // Page controller
+  final AccountController controller = Get.put(AccountController());
+
   @override
   Widget build(BuildContext context) {
+    Uint8List avatarData = ImageUtils.decodeImage(
+        ImageUtils.extractBase64FromDataUrl(service.userInfo.value!["avatar"]));
+
     return Theme(
       data: ThemeData(
         scaffoldBackgroundColor: const Color(0xFFF8F9FA),
@@ -16,7 +29,7 @@ class AccountSettingsPage extends StatelessWidget {
         padding: const EdgeInsets.all(30.0),
         child: SingleChildScrollView(
           scrollDirection: Axis.vertical,
-          child: Container(
+          child: SizedBox(
             width: double.infinity,
             child: Column(
               children: <Widget>[
@@ -57,17 +70,24 @@ class AccountSettingsPage extends StatelessWidget {
                                 const SizedBox(
                                   height: 10.0,
                                 ),
-                                CircleAvatar(
-                                  backgroundColor:
-                                      const Color.fromRGBO(244, 245, 249, 1.0),
-                                  minRadius: 30,
-                                  maxRadius: width / 2,
+                                InkWell(
+                                  onTap: controller.onAvatarClicked,
+                                  child: Obx(() => CircleAvatar(
+                                        backgroundColor: const Color.fromRGBO(
+                                            244, 245, 249, 1.0),
+                                        minRadius: 30,
+                                        maxRadius: width / 2,
+                                        backgroundImage: MemoryImage(
+                                            controller.selectedImage.value ??
+                                                avatarData),
+                                      )),
                                 ),
                                 const SizedBox(
                                   height: 30.0,
                                 ),
                                 OutlinedButton.icon(
-                                  onPressed: () {},
+                                  onPressed:
+                                      controller.onUploadAvatarButtonclicked,
                                   label: const Text(
                                     "Upload",
                                     style: TextStyle(

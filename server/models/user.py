@@ -1,9 +1,9 @@
+import os.path
 from flask_sqlalchemy import SQLAlchemy
 from sqlalchemy.orm import mapped_column
 from sqlalchemy import String, Integer, DateTime
 from datetime import datetime
-from uuid import uuid1
-
+from pathlib import Path
 
 user_db = SQLAlchemy()
 
@@ -17,4 +17,4 @@ class User(user_db.Model):
     role = mapped_column(Integer(), default=0) # User role, 0 represents a common user, 1 repersents an admin
     registration_time = mapped_column(DateTime(), default=datetime.now())
 
-    avatar_url = mapped_column(String(128)) # Avatar image file path
+    avatar_url = mapped_column(String(128), default="static/avatars/default_avatar.png") # Avatar image file path
