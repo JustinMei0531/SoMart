@@ -8,7 +8,7 @@ class Category(db.Model):
 
     id = mapped_column(Integer(), primary_key=True)
     category_name = mapped_column(String(50), nullable=False, unique=True)
-    category_image_url = mapped_column(String(128), nullable=False)
+    category_image_url = mapped_column(String(128))
 
     def __repr__(self):
         return f"<Category {self.category_name}>"

@@ -3,6 +3,8 @@ import "package:flutter/material.dart";
 
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
+import "package:management_system/http/apis.dart";
+import "package:management_system/widgets/product_item.dart";
 
 class TopBar extends StatelessWidget {
   final RxBool isOpened = false.obs; // State to control the green container
@@ -63,7 +65,18 @@ class HomePage extends StatelessWidget {
           TopBar(), // Use the custom TopBar widget
           Expanded(
             child: Center(
-              child: Text("Home Page Content"),
+              child: InkWell(
+                onTap: () {},
+                child: ProductItem(
+                  imgSrc: ProductApis.imagePath + "2b195dae51fb1fd386410859adc9ee23.webp",
+                  productName: "Fresh Lemon",
+                  beforePrice: "12.0",
+                  currentPrice: "13.0",
+                  categoty: "fruit&vegetables",
+                  tag: "fruit",
+
+                ),
+              ),
             ),
           ),
         ],

@@ -17,6 +17,7 @@ class HomeController extends GetxController {
     }
     isFullScreen = !isFullScreen;
     return;
+
   }
 
   void onLogoutButtonClicked() {
@@ -24,5 +25,13 @@ class HomeController extends GetxController {
     service.clearUserData();
     Get.offNamed("/login");
     return;
+  }
+
+  @override
+  void onInit(){
+    super.onInit();
+
+    service.checkTokenValidity();
+    service.startTokenCheck();
   }
 }

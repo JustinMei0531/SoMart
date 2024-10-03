@@ -5,53 +5,139 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="62a5de21-24ca-4fc9-b178-2564f502b8df" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/../frontend/management_system/lib/controllers/add_product_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/management_system/lib/controllers/products_controller.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/management_system/lib/widgets/custom_textfield.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/management_system/lib/widgets/image_preview_box.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/management_system/lib/widgets/product_item.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/mobile_app/lib/http/apis.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../frontend/mobile_app/lib/http/http_service.dart" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/category.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/models/product.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/categories/baby.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/categories/bakery.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/categories/dairy.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/categories/deli&amp;seafood.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/categories/drinks.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/categories/freezer.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/categories/fruit&amp;vegetables.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/categories/health&amp;beauty.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/categories/household cleaning.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/static/categories/pantry.webp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/utils/data.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/lib/controllers/account_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/lib/controllers/account_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/lib/controllers/home_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/lib/controllers/home_controller.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/lib/controllers/login_controller.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/lib/controllers/login_controller.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/management_system/lib/http/apis.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/lib/http/apis.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../frontend/management_system/lib/main.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/lib/main.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/lib/http/http_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/lib/http/http_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/lib/services/user_service.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/lib/services/user_service.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/lib/test.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/lib/test.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/lib/utils/image_utils.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/lib/utils/image_utils.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/lib/views/account_settings_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/lib/views/account_settings_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/lib/views/add_product_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/lib/views/add_product_page.dart" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../frontend/management_system/lib/views/home_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/lib/views/home_page.dart" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/server.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/server.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/lib/views/products_page.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/lib/views/products_page.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/lib/widgets/sidebar.dart" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/lib/widgets/sidebar.dart" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/linux/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/management_system/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/management_system/windows/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/mobile_app/linux/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/mobile_app/linux/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/mobile_app/linux/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/mobile_app/linux/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/mobile_app/macos/Flutter/GeneratedPluginRegistrant.swift" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/mobile_app/macos/Flutter/GeneratedPluginRegistrant.swift" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/mobile_app/pubspec.yaml" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/mobile_app/pubspec.yaml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/mobile_app/windows/flutter/generated_plugin_registrant.cc" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/mobile_app/windows/flutter/generated_plugin_registrant.cc" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../frontend/mobile_app/windows/flutter/generated_plugins.cmake" beforeDir="false" afterPath="$PROJECT_DIR$/../frontend/mobile_app/windows/flutter/generated_plugins.cmake" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/config/settings.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/database/somart.db" beforeDir="false" afterPath="$PROJECT_DIR$/database/somart.db" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/user.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/routes/login.py" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/__init__.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/__init__.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/models/user.py" beforeDir="false" afterPath="$PROJECT_DIR$/models/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/routes/admin.py" beforeDir="false" afterPath="$PROJECT_DIR$/routes/admin.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/static/avatars/qqqq.com_c530d52d75d011ef8806c89402a81fb6.png" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 7
-}]]></component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 7
+}</component>
   <component name="ProjectId" id="2mEgMXLxTYOyE2KSZhO5tMLS4vP" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="1" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.data.executor&quot;: &quot;Run&quot;,
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.test.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;last_opened_file_path&quot;: &quot;F:/Flutter/SoMart/server/static&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   },
-  "keyToStringList": {
-    "DatabaseDriversLRU": [
-      "sqlite"
+  &quot;keyToStringList&quot;: {
+    &quot;DatabaseDriversLRU&quot;: [
+      &quot;sqlite&quot;
     ]
   }
-}]]></component>
-  <component name="RunManager">
+}</component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="F:\Flutter\SoMart\server\static" />
+      <recent name="F:\Flutter\SoMart\server\static\products" />
+      <recent name="F:\Flutter\SoMart\server\static\jsons" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main">
+    <configuration name="data" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/utils" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/utils/data.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="server" />
       <option name="ENV_FILES" value="" />
@@ -75,9 +161,34 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
+    <configuration name="test" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+      <module name="server" />
+      <option name="ENV_FILES" value="" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/test.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
     <recent_temporary>
       <list>
         <item itemvalue="Python.main" />
+        <item itemvalue="Python.test" />
+        <item itemvalue="Python.data" />
       </list>
     </recent_temporary>
   </component>
@@ -97,7 +208,14 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1726647102392</updated>
-      <workItem from="1726647104286" duration="10257000" />
+      <workItem from="1726647104286" duration="26370000" />
+      <workItem from="1726841885192" duration="14042000" />
+      <workItem from="1726986953252" duration="1441000" />
+      <workItem from="1726991653713" duration="19221000" />
+      <workItem from="1727074392407" duration="13000" />
+      <workItem from="1727083652132" duration="10797000" />
+      <workItem from="1727100600371" duration="5513000" />
+      <workItem from="1727183559572" duration="33872000" />
     </task>
     <servers />
   </component>
@@ -105,6 +223,8 @@
     <option name="version" value="3" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/server$main.coverage" NAME="main Coverage Results" MODIFIED="1726672453883" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/server$main.coverage" NAME="main Coverage Results" MODIFIED="1727365620429" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/server$data.coverage" NAME="data Coverage Results" MODIFIED="1727021771490" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/utils" />
+    <SUITE FILE_PATH="coverage/server$test.coverage" NAME="test Coverage Results" MODIFIED="1727096392914" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

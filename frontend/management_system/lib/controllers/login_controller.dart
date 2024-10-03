@@ -94,13 +94,6 @@ your password, please contact the administrator to reset it.'''),
         service.saveToken(data["token"]);
         service.saveUserInfo(data["user"]);
 
-        if (data["user"]["role"] != 1) {
-          Get.snackbar("Error", "Please log in using an administrator account!",
-              icon: const Icon(Icons.warning),
-              maxWidth: 400.0,
-              duration: const Duration(seconds: 2));
-          return;
-        }
         Get.snackbar("Success", "Login successful",
             icon: const Icon(Icons.verified_outlined),
             maxWidth: 350.0,

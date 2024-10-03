@@ -9,8 +9,9 @@ class Sidebar extends StatelessWidget {
     {"title": "Dashboard", "icon": Icons.dashboard},
     {"title": "Products", "icon": Icons.shopping_bag},
     {"title": "Orders", "icon": Icons.trolley},
-    {"title": "Brands", "icon": Icons.star},
+    {"title": "Categories", "icon": Icons.category},
     {"title": "Add product", "icon": Icons.add},
+    {"title": "Users", "icon": Icons.group},
     {"title": "Transactions", "icon": Icons.money},
     {"title": "Reviews", "icon": Icons.chat},
     {"title": "Account", "icon": Icons.account_box}

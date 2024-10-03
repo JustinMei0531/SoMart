@@ -12,7 +12,7 @@ class ImageUtils {
     return base64Decode(base64String);
   }
 
-  /// Converts a Base64 string into an image data URL (useful for web apps)
+  /// Converts a Base64 string into an image data URL
   static String base64ToDataUrl(String base64String,
       {String mimeType = 'image/png'}) {
     return 'data:$mimeType;base64,$base64String';

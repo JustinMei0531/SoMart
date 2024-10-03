@@ -40,6 +40,7 @@ class AccountSettingsPage extends StatelessWidget {
                       style: TextStyle(
                           fontSize: 32,
                           fontWeight: FontWeight.bold,
+                          color: Colors.black54,
                           letterSpacing: 1.5),
                     )
                   ],
@@ -70,17 +71,31 @@ class AccountSettingsPage extends StatelessWidget {
                                 const SizedBox(
                                   height: 10.0,
                                 ),
-                                InkWell(
-                                  onTap: controller.onAvatarClicked,
-                                  child: Obx(() => CircleAvatar(
-                                        backgroundColor: const Color.fromRGBO(
-                                            244, 245, 249, 1.0),
-                                        minRadius: 30,
-                                        maxRadius: width / 2,
-                                        backgroundImage: MemoryImage(
-                                            controller.selectedImage.value ??
-                                                avatarData),
-                                      )),
+                                Obx(
+                                  () => CircleAvatar(
+                                    backgroundColor: const Color.fromRGBO(
+                                        244, 245, 249, 1.0),
+                                    minRadius: 30,
+                                    maxRadius: width / 2,
+                                    backgroundImage: MemoryImage(
+                                        controller.selectedImage.value ??
+                                            avatarData),
+                                    child: ClipOval(
+                                      child: Material(
+                                        color: Colors
+                                            .transparent, // Transparent color to make the InkWell blend in
+                                        child: InkWell(
+                                          onTap: controller.onAvatarClicked,
+                                          splashColor: Colors.blue.withAlpha(
+                                              30), // Optional splash effect
+                                          child: const SizedBox(
+                                            width: double.infinity,
+                                            height: double.infinity,
+                                          ),
+                                        ),
+                                      ),
+                                    ),
+                                  ),
                                 ),
                                 const SizedBox(
                                   height: 30.0,
@@ -115,7 +130,7 @@ class AccountSettingsPage extends StatelessWidget {
                         child: Container(
                           padding: const EdgeInsets.all(5.0),
                           child: Column(
-                            // mainAxisAlignment: MainAxisAlignment.start,
+                            crossAxisAlignment: CrossAxisAlignment.start,
                             children: <Widget>[
                               const Align(
                                 alignment: Alignment.topLeft,
@@ -128,6 +143,7 @@ class AccountSettingsPage extends StatelessWidget {
                                 height: 5,
                               ),
                               TextField(
+                                controller: controller.firstNameController,
                                 cursorWidth: 1.0,
                                 cursorColor: Colors.black87,
                                 obscureText: false,
@@ -172,6 +188,7 @@ class AccountSettingsPage extends StatelessWidget {
                                 height: 5,
                               ),
                               TextField(
+                                controller: controller.lastNameController,
                                 cursorWidth: 1.0,
                                 cursorColor: Colors.black87,
                                 obscureText: false,
@@ -216,6 +233,7 @@ class AccountSettingsPage extends StatelessWidget {
                                 height: 5,
                               ),
                               TextField(
+                                controller: controller.emailController,
                                 cursorWidth: 1.0,
                                 cursorColor: Colors.black87,
                                 obscureText: false,
@@ -260,6 +278,7 @@ class AccountSettingsPage extends StatelessWidget {
                                 height: 5,
                               ),
                               TextField(
+                                controller: controller.phoneController,
                                 cursorWidth: 1.0,
                                 cursorColor: Colors.black87,
                                 obscureText: false,
@@ -291,7 +310,7 @@ class AccountSettingsPage extends StatelessWidget {
                                 ),
                               ),
                               const SizedBox(
-                                height: 10.0,
+                                height: 15.0,
                               ),
 
                               // Use LayoutBuilder widget to get the size of parent widget
@@ -303,7 +322,8 @@ class AccountSettingsPage extends StatelessWidget {
                                       width: width / 2,
                                       height: 40.0,
                                       child: ElevatedButton(
-                                        onPressed: () {},
+                                        onPressed: controller
+                                            .onSaveChangesButtonClicked,
                                         style: ElevatedButton.styleFrom(
                                             backgroundColor:
                                                 const Color.fromRGBO(
@@ -323,13 +343,6 @@ class AccountSettingsPage extends StatelessWidget {
                               )
                             ],
                           ),
-                        ),
-                      ),
-                      Expanded(
-                        flex: 1,
-                        child: Container(
-                          height: 300.0,
-                          color: Colors.green,
                         ),
                       ),
                     ],

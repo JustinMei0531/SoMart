@@ -6,6 +6,7 @@ import "package:management_system/services/user_service.dart";
 import "package:management_system/controllers/home_controller.dart";
 import "package:management_system/views/account_settings_page.dart";
 import "package:management_system/views/add_product_page.dart";
+import "package:management_system/views/all_users_page.dart";
 import "package:management_system/views/brands_page.dart";
 import "package:management_system/views/dashboard_page.dart";
 import "package:management_system/views/orders_page.dart";
@@ -116,11 +117,15 @@ class HomePage extends StatelessWidget {
                           color: Colors.grey,
                         ),
                       ),
-                      const Text(
-                        "SoMart Management System",
-                        style: TextStyle(
-                            fontSize: 24,
-                            color: Color.fromRGBO(76, 167, 113, 1.0)),
+                      const Flexible(
+                        child: Text(
+                          "SoMart Management System  v1.0.0",
+                          overflow: TextOverflow.ellipsis,
+                          maxLines: 1,
+                          style: TextStyle(
+                              fontSize: 24,
+                              color: Color.fromRGBO(76, 167, 113, 1.0)),
+                        ),
                       ),
                       Row(
                         mainAxisAlignment: MainAxisAlignment.end,
@@ -184,6 +189,7 @@ class HomePage extends StatelessWidget {
                                 OrdersPage(),
                                 BrandsPage(),
                                 AddProductPage(),
+                                AllUsersPage(),
                                 TransactionsPage(),
                                 ReviewsPage(),
                                 AccountSettingsPage(),
